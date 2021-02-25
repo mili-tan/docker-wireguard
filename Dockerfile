@@ -7,7 +7,7 @@ RUN CGO_ENABLED=0 GOOS=linux \
     go get && \
     go build -a -installsuffix cgo -ldflags '-s' -o warp
 
-FROM alpine:latest
+FROM shadowsocks/shadowsocks-libev:latest
 
 COPY --from=builder /go/src/warp/warp /usr/local/bin/
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
