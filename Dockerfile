@@ -49,5 +49,12 @@ ENV     SOCKS5_PROXY_PORT               "1080"
 ENV     HTTP_PROXY_PORT                 "3128"
 
 ENV     DAEMON_MODE                     "false"
+# SS Options
+ENV SS-SERVER_ADDR "0.0.0.0"
+ENV SS-SERVER_PORT "8388"
+ENV SS-PASS ""
+ENV SS-METHOD      "chacha20-ietf-poly1305"
+ENV SS-TIMEOUT     "300"
+ENV SS-DNS_ADDRS    "8.8.8.8,8.8.4.4"
 
 ENTRYPOINT  [ "entrypoint.sh" ]
