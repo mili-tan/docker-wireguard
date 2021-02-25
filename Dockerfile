@@ -1,5 +1,6 @@
 FROM golang:alpine as builder
 WORKDIR /go/src
+ENV GO111MODULE "auto"
 COPY warp.go ./warp/
 RUN CGO_ENABLED=0 GOOS=linux \
     apk add --no-cache git build-base && \
