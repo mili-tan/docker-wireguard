@@ -9,7 +9,7 @@ RUN CGO_ENABLED=0 GOOS=linux \
     go build -a -installsuffix cgo -ldflags '-s' -o warp
 
 FROM shadowsocks/shadowsocks-libev:latest
-
+USER root
 COPY --from=builder /go/src/warp/warp /usr/local/bin/
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=curve25519xsalsa20poly1305/aria2:latest /usr/bin/aria2c /usr/bin/
