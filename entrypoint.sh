@@ -185,12 +185,12 @@ ip -4 rule add prio 20 table main suppress_prefixlength 0
 log "INFO" "Updated iptables"
 
 spawn ss-server \
-      -s "${SS-SERVER_ADDR}" \
-      -p "${SS-SERVER_PORT}" \
-      -k "${SS-PASS}" \
-      -m "${SS-METHOD}" \
-      -t "${SS-TIMEOUT}" \
-      -d "${SS-DNS_ADDRS}" \
+      -s "${SS_SERVER_ADDR}" \
+      -p "${SS_SERVER_PORT}" \
+      -k "${SS_PASS}" \
+      -m "${SS_METHOD}" \
+      -t "${SS_TIMEOUT}" \
+      -d "${SS_DNS_ADDRS}" \
       -u 
 
 if [[ "${ARIA2_ENABLED}" == "true" && -n "${ARIA2_UP}" ]]; then
